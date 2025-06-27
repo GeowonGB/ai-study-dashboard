@@ -5,61 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Study Dashboard</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #111;
       color: #fff;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      height: 100vh;
     }
-
     header {
-      padding: 1rem;
+      padding: 0.5rem;
       background: #222;
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.2rem;
     }
-
     .container {
       flex: 1;
       display: flex;
       flex-direction: row;
+      gap: 0.5rem;
+      padding: 0.5rem;
     }
-
     .column {
       flex: 1;
-      padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.5rem;
     }
-
-    iframe, .card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
     .card {
       background-color: #1a1a1a;
-      padding: 1rem;
+      padding: 0.75rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      flex: 1;
     }
-
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.5rem;
+    }
     a.button {
       display: inline-block;
       background-color: #333;
       color: #fff;
       text-decoration: none;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
       text-align: center;
-      margin-top: 0.5rem;
+      font-size: 0.9rem;
     }
     a.button:hover {
       background-color: #555;
+    }
+    @media (max-height: 600px) {
+      header {
+        font-size: 1rem;
+        padding: 0.25rem;
+      }
     }
   </style>
 </head>
@@ -69,29 +83,32 @@
     <!-- Left Column -->
     <div class="column">
       <div class="card">
-        <h3>✅ To-Do List (TickTick or Notion)</h3>
-        <iframe src="https://ticktick.com/webapp/#q/all/tasks" width="100%" height="300"></iframe>
+        <h3>✅ To-Do List</h3>
+        <iframe src="https://ticktick.com/webapp/#q/all/tasks"></iframe>
       </div>
       <div class="card">
-        <h3>📓 Quick Notes</h3>
-        <iframe src="https://keep.google.com" width="100%" height="200"></iframe>
+        <h3>📓 Notes (Temporary workaround)</h3>
+        <p>Google Keep doesn't support embedding. Click below to open:</p>
+        <a class="button" href="https://keep.google.com" target="_blank">Open Notes</a>
       </div>
     </div>
 
     <!-- Right Column -->
     <div class="column">
       <div class="card">
-        <h3>🎧 Focus Music (Spotify)</h3>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdxcBWuJkbcy?utm_source=generator" width="100%" height="80" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <h3>🎧 Music Control (Open Spotify App)</h3>
+        <a class="button" href="spotify://" target="_blank">Open Spotify</a>
       </div>
       <div class="card">
-        <h3>⏱️ Pomodoro Timer</h3>
-        <iframe src="https://pomofocus.io" width="100%" height="200"></iframe>
+        <h3>⏱ Pomodoro Timer</h3>
+        <iframe src="https://pomofocus.io"></iframe>
       </div>
       <div class="card">
-        <h3>💬 Ask AI</h3>
-        <a class="button" href="https://chat.openai.com" target="_blank">ChatGPT</a>
-        <a class="button" href="https://www.perplexity.ai" target="_blank">Perplexity AI</a>
+        <h3>💬 AI Assistants</h3>
+        <div class="button-grid">
+          <a class="button" href="https://chat.openai.com" target="_blank">ChatGPT</a>
+          <a class="button" href="https://www.perplexity.ai" target="_blank">Perplexity AI</a>
+        </div>
       </div>
     </div>
   </div>
