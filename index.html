@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Study Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      padding: 1rem;
+      background: #222;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .column {
+      flex: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    iframe, .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      padding: 1rem;
+    }
+
+    a.button {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    a.button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>📚 CGT's AI Study Dashboard</header>
+  <div class="container">
+    <!-- Left Column -->
+    <div class="column">
+      <div class="card">
+        <h3>✅ To-Do List (TickTick or Notion)</h3>
+        <iframe src="https://ticktick.com/webapp/#q/all/tasks" width="100%" height="300"></iframe>
+      </div>
+      <div class="card">
+        <h3>📓 Quick Notes</h3>
+        <iframe src="https://keep.google.com" width="100%" height="200"></iframe>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="column">
+      <div class="card">
+        <h3>🎧 Focus Music (Spotify)</h3>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdxcBWuJkbcy?utm_source=generator" width="100%" height="80" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="card">
+        <h3>⏱️ Pomodoro Timer</h3>
+        <iframe src="https://pomofocus.io" width="100%" height="200"></iframe>
+      </div>
+      <div class="card">
+        <h3>💬 Ask AI</h3>
+        <a class="button" href="https://chat.openai.com" target="_blank">ChatGPT</a>
+        <a class="button" href="https://www.perplexity.ai" target="_blank">Perplexity AI</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
